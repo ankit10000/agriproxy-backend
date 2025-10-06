@@ -28,7 +28,7 @@ const signup = async (req, res) => {
       email,
       password,
       phone,
-      location
+      addressLine
     });
 
     user.lastLogin = new Date();

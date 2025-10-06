@@ -61,7 +61,10 @@ const updateProfile = async (req, res) => {
     const updateData = {
       name,
       phone,
-      location: fullLocation,
+      addressLine,
+      city,
+      state,
+      pincode,
       profileCompleted: true
     };
 

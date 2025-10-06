@@ -21,9 +21,13 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 const authRoutes = require('./routes/auth');
 const profileRoutes = require('./routes/profile');
+const soilTestingRoutes = require('./routes/soilTesting');
+const feedbackRoutes = require('./routes/feedback');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/profile', profileRoutes);
+app.use('/api/soil-testing', soilTestingRoutes);
+app.use('/api/feedback', feedbackRoutes);
 
 app.get('/', (req, res) => {
   res.json({

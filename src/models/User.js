@@ -34,10 +34,25 @@ const userSchema = new mongoose.Schema({
       'Please provide a valid phone number'
     ]
   },
-  location: {
+  addressLine: {
     type: String,
     trim: true,
-    maxlength: [100, 'Location cannot exceed 100 characters']
+    maxlength: [100, 'Address line cannot exceed 100 characters']
+  },
+  city: {
+    type: String,
+    trim: true,
+    maxlength: [50, 'City cannot exceed 50 characters']
+  },
+  state: {
+    type: String,
+    trim: true,
+    maxlength: [50, 'State cannot exceed 50 characters']
+  },
+  pincode: {
+    type: String,
+    trim: true,
+    match: [/^\d{6}$/, 'Pincode must be 6 digits']
   },
   avatar: {
     type: String,
