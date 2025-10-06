@@ -89,13 +89,6 @@ const userSchema = new mongoose.Schema({
     maxlength: [20, 'Username cannot exceed 20 characters'],
     match: [/^[a-zA-Z0-9_]+$/, 'Username can only contain letters, numbers, and underscores']
   },
-  addressLine: String,
-  city: String,
-  state: String,
-  pincode: {
-    type: String,
-    match: [/^\d{6}$/, 'Pincode must be 6 digits']
-  },
   deletedAt: Date
 }, {
   timestamps: true,
@@ -152,7 +145,7 @@ userSchema.methods.createEmailVerificationToken = function() {
   return verificationToken;
 };
 
-userSchema.index({ email: 1 });
+// Email already has unique index from schema definition
 userSchema.index({ phone: 1 });
 userSchema.index({ createdAt: -1 });
 
