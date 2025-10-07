@@ -16,7 +16,7 @@ app.use(
 
 app.use(
   cors({
-    origin: true,
+    origin: ['http://srv1040662.hstgr.cloud', 'http://localhost:5173'],
     credentials: true,
   })
 );
